@@ -9,7 +9,8 @@
     'firebase',
 
     // Custom modules
-    'mutantApp.home'
+    'mutantApp.home',
+    'mutantApp.mutantList'
   ]);
 
 })();
