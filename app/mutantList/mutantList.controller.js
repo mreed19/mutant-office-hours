@@ -12,6 +12,7 @@
 
     vm.addMutant = addMutant;
     vm.deleteMutant = deleteMutant;
+    vm.toggleComplete = toggleComplete;
     vm.mutants = $firebaseArray(mutantsRef);
     vm.newMutant = new Mutant();
 
@@ -30,6 +31,10 @@
 
     function deleteMutant(mutant) {
       vm.mutants.$remove(mutant);
+    }
+
+    function toggleComplete(mutant) {
+      vm.mutants.$save(mutant);
     }
   }
 })();
