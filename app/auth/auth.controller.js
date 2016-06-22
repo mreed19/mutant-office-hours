@@ -8,5 +8,7 @@
   AuthController.$inject = [];
   function AuthController() {
     var vm = this;
+
+    
   }
 })();
