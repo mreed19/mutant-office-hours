@@ -25,6 +25,7 @@
           vm.login(user);
         })
         .catch(function(error) {
+          // eslint-disable-next-line
           console.log(error);
         });
     }
@@ -35,6 +36,7 @@
         $state.go('mutantList');
       })
       .catch(function(error) {
+        // eslint-disable-next-line
         console.log(error);
       });
     }
