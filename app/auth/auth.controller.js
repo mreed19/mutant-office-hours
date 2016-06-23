@@ -32,7 +32,6 @@
     function login(user) {
       return auth.$signInWithEmailAndPassword(user.email, user.password)
       .then(function() {
-        // console.log('hello from login' + user);
         $state.go('mutantList');
       })
       .catch(function(error) {
