@@ -9,7 +9,9 @@
     var root = firebase.database().ref();
 
     var service = {
-      root: root
+      root: root,
+      texts: root.child('texts'),
+      mutants: root.child('mutants')
     };
 
     return service;
