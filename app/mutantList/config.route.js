@@ -20,9 +20,6 @@
 
   resolveUser.$inject = ['authService'];
   function resolveUser(authService) {
-    return authService.auth.$requireSignIn().then(function(user) {
-      // eslint-disable-next-line
-      console.log(user);
-    });
+    return authService.auth.$requireSignIn();
   }
 })();
