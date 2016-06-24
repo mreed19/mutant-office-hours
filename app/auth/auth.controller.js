@@ -11,8 +11,6 @@
 
     vm.register = register;
     vm.login = login;
-    vm.logout = logout;
-    vm.isLoggedIn = authService.isLoggedIn;
 
     vm.user = {
       email: '',
@@ -31,11 +29,6 @@
       .then(function() {
         $state.go('mutantList');
       });
-    }
-
-    function logout() {
-      authService.logout();
-      $state.go('home');
     }
   }
 })();
