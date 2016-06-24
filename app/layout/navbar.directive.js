@@ -10,7 +10,8 @@
       templateUrl: 'app/layout/navbar.html',
       restrict: 'E',
       controller: NavbarController,
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      scope: {}
     };
   }
 
