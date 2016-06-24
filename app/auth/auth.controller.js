@@ -23,10 +23,6 @@
       return authService.register(user)
         .then(function() {
           vm.login(user);
-        })
-        .catch(function(error) {
-          // eslint-disable-next-line
-          console.log(error);
         });
     }
 
@@ -34,10 +30,6 @@
       return authService.login(user)
       .then(function() {
         $state.go('mutantList');
-      })
-      .catch(function(error) {
-        // eslint-disable-next-line
-        console.log(error);
       });
     }
 

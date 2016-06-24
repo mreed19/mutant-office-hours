@@ -12,7 +12,8 @@
     'mutantApp.home',
     'mutantApp.mutantList',
     'mutantApp.auth',
-    'mutantApp.core'
+    'mutantApp.core',
+    'mutantApp.layout'
   ]);
 
 })();
