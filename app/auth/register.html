@@ -2,6 +2,10 @@
    <form ng-submit="vm.register(vm.user)">
      <div class="column log-in-form">
        <h4 class="text-center">Sign up</h4>
+
+       <!-- Server Authentication Errors -->
+       <div class="callout small alert" ng-show="vm.error" ng-bind="vm.error"></div>
+
        <label>Email
          <input ng-model="vm.user.email" type="email" placeholder="somebody@example.com" required autofocus>
        </label>
