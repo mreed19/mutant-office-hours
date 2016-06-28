@@ -11,6 +11,7 @@
 
     vm.register = register;
     vm.login = login;
+    vm.error = null;
 
     vm.user = {
       email: '',
@@ -20,8 +21,13 @@
     function register(user) {
       return authService.register(user)
         .then(function() {
-          authService.sendWelcomeEmail(user.email);
           vm.login(user);
+        })
+        .then(function() {
+          authService.sendWelcomeEmail(user.email);
+        })
+        .catch(function(error) {
+          vm.error = error;
         });
     }
 
@@ -29,6 +35,9 @@
       return authService.login(user)
       .then(function() {
         $state.go('mutantList');
+      })
+      .catch(function(error) {
+        vm.error = error;
       });
     }
   }
