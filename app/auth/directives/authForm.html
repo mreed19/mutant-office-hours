@@ -1,0 +1,23 @@
+<!-- Server Authentication Errors -->
+<div class="callout small alert" ng-show="vm.error" ng-bind="vm.error"></div>
+
+<label>Email
+  <input ng-model="vm.user.email" type="email" name="email" placeholder="somebody@example.com" required autofocus ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }">
+</label>
+
+<!-- Email errors -->
+<div class="callout small alert" ng-show="authForm.$submitted && authForm.email.$error.required">
+  Email can't be blank.
+</div>
+<div class="callout small alert" ng-show="authForm.$submitted && authForm.email.$error.email">
+  Email isn't formatted correctly.
+</div>
+
+<label>Password
+  <input ng-model="vm.user.password" type="password" name="password" placeholder="Password" required ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }">
+</label>
+
+<!-- Password errors -->
+<div class="callout small alert" ng-show="authForm.$submitted && authForm.password.$error.required">
+  Password can't be blank.
+</div>
