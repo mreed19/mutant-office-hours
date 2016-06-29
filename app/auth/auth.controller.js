@@ -13,11 +13,6 @@
     vm.login = login;
     vm.error = null;
 
-    vm.user = {
-      email: '',
-      password: ''
-    };
-
     function register(user) {
       return authService.register(user)
         .then(function() {

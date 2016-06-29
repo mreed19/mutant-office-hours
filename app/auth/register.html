@@ -1,11 +1,4 @@
-<div class="medium-6 medium-centered large-4 large-centered columns">
-   <form ng-submit="authForm.$valid && vm.register(vm.user)" name="authForm" novalidate>
-     <div class="column log-in-form">
-       <h4 class="text-center">Sign up</h4>
-
-       <xt-auth-form></xt-auth-form>
-
-       <p><button type="submit" class="button expanded">Sign up</button></p>
-     </div>
-   </form>
- </div>
+<xt-auth-form
+  form-name="Sign up"
+  submit-function="vm.register(user)"
+  ></xt-auth-form>
