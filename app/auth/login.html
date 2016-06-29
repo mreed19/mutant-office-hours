@@ -1,5 +1,5 @@
 <div class="medium-6 medium-centered large-4 large-centered columns">
-   <form ng-submit="vm.login(vm.user)" name="authForm" novalidate>
+   <form ng-submit="authForm.$valid && vm.login(vm.user)" name="authForm" novalidate>
      <div class="column log-in-form">
        <h4 class="text-center">Log in</h4>
 
@@ -26,7 +26,7 @@
        <div class="callout small alert" ng-show="authForm.$submitted && authForm.password.$error.required">
          Password can't be blank.
        </div>
-       
+
        <p><button type="submit" class="button expanded">Log in</button></p>
      </div>
    </form>
