@@ -14,7 +14,8 @@
       bindToController: true,
       scope: {
         submitFunction: '&',
-        formName: '@'
+        formName: '@',
+        error: '='
       }
     };
   }
