@@ -19,6 +19,9 @@
           vm.login(user);
         })
         .then(function() {
+          authService.addName(user.name);
+        })
+        .then(function() {
           authService.sendWelcomeEmail(user.email);
         })
         .catch(function(error) {

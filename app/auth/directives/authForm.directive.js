@@ -26,7 +26,8 @@
 
     vm.user = {
       email: '',
-      password: ''
+      password: '',
+      name: ''
     };
   }
 })();
