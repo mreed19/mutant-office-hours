@@ -6,7 +6,7 @@
        <!-- Server Authentication Errors -->
        <div class="callout small alert" ng-show="vm.error" ng-bind="vm.error"></div>
 
-       <div ng-show="vm.formName === 'Sign up'">
+       <div ng-if="vm.includeName">
          <label>Name
            <input
              type="text"
@@ -15,7 +15,7 @@
              placeholder="Name"
              ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }"
              required
-             autofocus>
+             ng-attr-autofocus="{{vm.includeName}}">
          </label>
 
          <!-- Name errors -->
@@ -31,7 +31,8 @@
            name="email"
            placeholder="somebody@example.com"
            ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }"
-           required>
+           required
+           ng-attr-autofocus="{{vm.includeName || undefined}}">
        </label>
 
        <!-- Email errors -->
