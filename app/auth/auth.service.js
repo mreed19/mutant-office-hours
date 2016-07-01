@@ -47,7 +47,7 @@
     }
 
     function addName(name) {
-      console.log(name);
+      auth.$getAuth().updateProfile({displayName: name});
     }
   }
 })();

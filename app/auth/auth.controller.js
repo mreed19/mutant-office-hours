@@ -16,10 +16,9 @@
     function register(user) {
       return authService.register(user)
         .then(function() {
-          vm.login(user);
-        })
-        .then(function() {
-          authService.addName(user.name);
+          vm.login(user).then(function() {
+            authService.addName(user.name);
+          });
         })
         .then(function() {
           authService.sendWelcomeEmail(user.email);
