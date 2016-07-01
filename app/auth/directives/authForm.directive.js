@@ -24,9 +24,12 @@
   function AuthFormController() {
     var vm = this;
 
+    vm.includeName = vm.formName === 'Sign up';
+
     vm.user = {
       email: '',
-      password: ''
+      password: '',
+      name: ''
     };
   }
 })();

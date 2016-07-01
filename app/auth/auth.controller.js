@@ -16,7 +16,14 @@
     function register(user) {
       return authService.register(user)
         .then(function() {
-          vm.login(user);
+          // Use authService to allow for the display name change to
+          // take place before the mutantList state loads
+          authService.login(user).then(function() {
+            authService.addName(user.name)
+              .then(function() {
+                $state.go('mutantList');
+              });
+          });
         })
         .then(function() {
           authService.sendWelcomeEmail(user.email);

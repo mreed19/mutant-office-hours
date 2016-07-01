@@ -6,6 +6,7 @@
   </div>
   <div class="top-bar-right">
     <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+      <li><a href="#" ng-show="vm.isLoggedIn()" ng-bind="vm.getDisplayName()"></a></li>
       <li><a ui-sref="login" ng-show="!vm.isLoggedIn()">Log in</a></li>
       <li><a href="#" ng-click="vm.logout()"  ng-show="vm.isLoggedIn()">Log out</a></li>
     </ul>

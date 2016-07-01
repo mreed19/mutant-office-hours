@@ -21,10 +21,17 @@
 
     vm.logout = logout;
     vm.isLoggedIn = authService.isLoggedIn;
+    vm.getDisplayName = getDisplayName;
 
     function logout() {
       authService.logout();
       $state.go('home');
+    }
+
+    function getDisplayName() {
+      if (vm.isLoggedIn()) {
+        return authService.auth.$getAuth().displayName;
+      }
     }
   }
 })();
