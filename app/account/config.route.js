@@ -11,7 +11,15 @@
       url: '/account',
       templateUrl: 'app/account/account.html',
       controller: 'AccountController',
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      resolve: {
+        user: resolveUser
+      }
     });
+  }
+
+  resolveUser.$inject = ['authService'];
+  function resolveUser(authService) {
+    return authService.auth.$requireSignIn();
   }
 })();
