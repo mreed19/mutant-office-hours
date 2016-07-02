@@ -5,8 +5,9 @@
     .module('mutantApp.account')
     .controller('AccountController', AccountController);
 
-  AccountController.$inject = [];
-  function AccountController() {
-    
+  AccountController.$inject = ['user'];
+  function AccountController(user) {
+    var vm = this;
+    vm.user = user;
   }
 })();
