@@ -13,7 +13,8 @@
     'mutantApp.mutantList',
     'mutantApp.auth',
     'mutantApp.core',
-    'mutantApp.layout'
+    'mutantApp.layout',
+    'mutantApp.account'
   ])
   .config(configFunction)
   .run(runFunction);
