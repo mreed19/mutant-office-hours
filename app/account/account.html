@@ -1,7 +1,12 @@
 <div class="medium-6 medium-centered large-4 large-centered columns">
    <form ng-submit="updateForm.$valid && vm.updateUser()" name="updateForm" novalidate>
      <div class="column log-in-form">
-        <h4 class="text-center">{{vm.user.displayName}}</h4>
+         <div class="row">
+           <div class="small-4 small-offset-4 columns">
+             <img gravatar-src="'{{ vm.user.email }}'">
+           </div>
+         </div>
+       <h4 class="text-center">{{vm.user.displayName}}</h4>
 
        <!-- Server Authentication Errors -->
        <div class="callout small alert" ng-show="vm.error" ng-bind="vm.error"></div>
