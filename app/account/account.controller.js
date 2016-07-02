@@ -5,16 +5,21 @@
     .module('mutantApp.account')
     .controller('AccountController', AccountController);
 
-  AccountController.$inject = ['user', 'authService'];
-  function AccountController(user, authService) {
+  AccountController.$inject = ['$state', 'user', 'authService'];
+  function AccountController($state, user, authService) {
     var vm = this;
 
     vm.user = user;
-    vm.user.name = user.displayName;
+
+    vm.updateUserObject = {
+      name: user.displayName
+    };
     vm.updateUser = updateUser;
 
     function updateUser() {
-      authService.updateUser(vm.user);
+      authService.updateUser(vm.updateUserObject).then(function() {
+        $state.go($state.current, {}, {reload: true});
+      });
     }
   }
 })();

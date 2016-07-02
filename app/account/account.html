@@ -1,7 +1,7 @@
 <div class="medium-6 medium-centered large-4 large-centered columns">
-  <h1 class="text-center">{{vm.user.displayName}}<h1>
-   <form ng-submit="vm.updateUser()" name="updateForm" novalidate>
+   <form ng-submit="updateForm.$valid && vm.updateUser()" name="updateForm" novalidate>
      <div class="column log-in-form">
+        <h4 class="text-center">{{vm.user.displayName}}</h4>
 
        <!-- Server Authentication Errors -->
        <div class="callout small alert" ng-show="vm.error" ng-bind="vm.error"></div>
@@ -10,7 +10,7 @@
          <label>Name
            <input
              type="text"
-             ng-model="vm.user.name"
+             ng-model="vm.updateUserObject.name"
              name="name"
              placeholder="Name"
              ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }"
