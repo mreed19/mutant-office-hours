@@ -8,6 +8,7 @@
     // Third-party modules
     'firebase',
     'ui.gravatar',
+    'file-model',
 
     // Custom modules
     'mutantApp.home',
