@@ -11,5 +11,6 @@
     vm.user = user;
 
     vm.mutants = mutantService.mutantsByUser(user.uid);
+    vm.viewOnly = false;
   }
 })();
