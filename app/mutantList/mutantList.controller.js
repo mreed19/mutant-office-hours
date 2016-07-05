@@ -10,5 +10,6 @@
     var vm = this;
 
     vm.mutants = mutantService.mutantsByUser(user.uid);
+    vm.viewOnly = false;
   }
 })();
