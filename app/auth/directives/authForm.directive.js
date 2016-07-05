@@ -31,5 +31,10 @@
       password: '',
       name: ''
     };
+
+    vm.userForgot = {
+      email: ''
+    };
+
   }
 })();

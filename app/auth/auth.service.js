@@ -16,7 +16,8 @@
       logout: logout,
       isLoggedIn: isLoggedIn,
       sendWelcomeEmail: sendWelcomeEmail,
-      addName: addName
+      addName: addName,
+      forgotPassword: forgotPassword
     };
 
     return service;
@@ -49,5 +50,18 @@
     function addName(name) {
       return auth.$getAuth().updateProfile({displayName: name});
     }
+
+    function forgotPassword(userEmail) {
+      var auth = firebase.auth();
+
+      auth.sendPasswordResetEmail(userEmail)
+      .then(function() {
+        console.log('email sent');
+      }, function (error) {
+        console.log(error);
+      });
+
+    }
+
   }
 })();

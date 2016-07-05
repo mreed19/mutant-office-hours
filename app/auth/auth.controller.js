@@ -12,6 +12,7 @@
     vm.register = register;
     vm.login = login;
     vm.error = null;
+    vm.forgotPassword = forgotPassword;
 
     function register(user) {
       return authService.register(user)
@@ -42,5 +43,13 @@
         vm.error = error;
       });
     }
+
+    function forgotPassword(email) {
+      return authService.forgotPassword(email)
+      .then(function() {
+        $state.go('login');
+      });
+    }
+
   }
 })();

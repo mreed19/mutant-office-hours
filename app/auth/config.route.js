@@ -20,5 +20,13 @@
       controller: 'AuthController',
       controllerAs: 'vm'
     });
+
+    $stateProvider.state('forgotPassword', {
+      url: '/forgotPassword',
+      templateUrl: 'app/auth/forgotPassword.html',
+      controller: 'AuthController',
+      controllerAs: 'vm'
+    });
+
   }
 })();
