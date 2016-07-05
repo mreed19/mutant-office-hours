@@ -6,6 +6,24 @@
        <!-- Server Authentication Errors -->
        <div class="callout small alert" ng-show="vm.error" ng-bind="vm.error"></div>
 
+       <div ng-if="vm.includeName">
+         <label>Name
+           <input
+             type="text"
+             ng-model="vm.user.name"
+             name="name"
+             placeholder="Name"
+             ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }"
+             required
+             ng-attr-autofocus="{{vm.includeName}}">
+         </label>
+
+         <!-- Name errors -->
+         <div class="callout small alert" ng-show="authForm.$submitted && authForm.name.$error.required">
+           Name can't be blank.
+         </div>
+       </div>
+
        <label>Email
          <input
            ng-model="vm.user.email"
@@ -14,7 +32,7 @@
            placeholder="somebody@example.com"
            ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }"
            required
-           autofocus>
+           ng-attr-autofocus="{{vm.includeName || undefined}}">
        </label>
 
        <!-- Email errors -->
