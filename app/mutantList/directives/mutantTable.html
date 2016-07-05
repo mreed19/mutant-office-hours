@@ -6,8 +6,8 @@
         <th>Phone</th>
         <th>Topic</th>
         <th>Notified</th>
-        <th>Complete</th>
-        <th>Actions</th>
+        <th ng-hide="vm.viewOnly">Complete</th>
+        <th ng-hide="vm.viewOnly">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -16,8 +16,8 @@
         <td>{{ mutant.phone }}</td>
         <td>{{ mutant.topic }}</td>
         <td>{{ mutant.notified ? 'Yes' : 'No' }}</td>
-        <td><input type="checkbox" ng-model="mutant.complete" ng-change="vm.toggleComplete(mutant)"></td>
-        <td>
+        <td><input type="checkbox" ng-model="mutant.complete" ng-change="vm.toggleComplete(mutant)" ng-hide="vm.viewOnly"></td>
+        <td ng-hide="vm.viewOnly">
           <button class="button success" ng-click="vm.sendText(mutant)">Text</button>
           <button class="button alert" ng-click="vm.deleteMutant(mutant)">Delete</button>
         </td>
