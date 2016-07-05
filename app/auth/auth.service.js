@@ -18,6 +18,7 @@
       sendWelcomeEmail: sendWelcomeEmail,
       addName: addName,
       forgotPassword: forgotPassword
+      updateUser: updateUser
     };
 
     return service;
@@ -63,5 +64,8 @@
 
     }
 
+    function updateUser(user) {
+      return auth.$getAuth().updateProfile({displayName: user.name});
+    }
   }
 })();
