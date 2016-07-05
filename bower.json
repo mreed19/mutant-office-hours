@@ -1,0 +1,13 @@
+{
+  "name": "mutant-office-hours",
+  "description": "An Angular app for managing the office hours wait list for Xavier's School for Gifted Youngsters",
+  "authors": [
+    "Michael Reed"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mreed19/mutant-office-hours",
+  "dependencies": {
+    "angular-gravatar": "^0.4.2",
+    "angular-file-model": "^0.3.1"
+  }
+}

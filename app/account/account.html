@@ -1,0 +1,43 @@
+<div class="medium-6 medium-centered large-4 large-centered columns">
+   <form ng-submit="updateForm.$valid && vm.updateUser()" name="updateForm" novalidate>
+     <div class="column log-in-form">
+         <div class="row">
+           <div class="small-4 small-offset-4 columns">
+             <img gravatar-src="'{{ vm.user.email }}'" gravatar-default="mm">
+           </div>
+         </div>
+       <h4 class="text-center">{{vm.user.displayName}}</h4>
+
+       <!-- Server Authentication Errors -->
+       <div class="callout small alert" ng-show="vm.error" ng-bind="vm.error"></div>
+
+       <div>
+         <label>Name
+           <input
+             type="text"
+             ng-model="vm.updateUserObject.name"
+             name="name"
+             placeholder="Name"
+             ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }"
+             required
+             autofocus>
+         </label>
+
+         <!-- Name errors -->
+         <div class="callout small alert" ng-show="updateForm.$submitted && updateForm.name.$error.required">
+           Name can't be blank.
+         </div>
+       </div>
+
+       <label class="button">Profile picture
+         <input
+           style="display: none"
+           type="file"
+           file-model="vm.picture"
+           name="picture"
+           accept="image/*">
+       </label>
+       <p><button type="submit" class="button expanded">Update</button></p>
+     </div>
+   </form>
+ </div>
