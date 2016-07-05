@@ -1,3 +1,6 @@
+<div class="small-12 columns text-center">
+  <h1>{{ vm.user.displayName }}'s Wait List</h1>
+</div>
 <input type="checkbox" ng-model="vm.viewOnly" ng-hide="vm.viewOnly">View Only
-<xt-mutant-form></xt-mutant-form>
+<xt-mutant-form mutants="vm.mutants"></xt-mutant-form>
 <xt-mutant-table mutants="vm.mutants" view-only="vm.viewOnly"></xt-mutant-table>

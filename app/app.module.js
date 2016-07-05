@@ -7,13 +7,16 @@
 
     // Third-party modules
     'firebase',
+    'ui.gravatar',
+    'file-model',
 
     // Custom modules
     'mutantApp.home',
     'mutantApp.mutantList',
     'mutantApp.auth',
     'mutantApp.core',
-    'mutantApp.layout'
+    'mutantApp.layout',
+    'mutantApp.account'
   ])
   .config(configFunction)
   .run(runFunction);
